@@ -10,7 +10,9 @@
         var ajax = new XMLHttpRequest();
         ajax.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
+            // alert(this.responseText);
+            document.getElementById("test").innerHTML = this.responseText;
+            console.log("GET berhasil");
           }
         };
         ajax.open("GET", "text.txt", true);
@@ -20,5 +22,6 @@
   </head>
   <body>
     <button onclick="ajaxFunction()">Call AJAX</button>
+    <div id="test"></div>
   </body>
 </html>
